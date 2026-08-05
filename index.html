@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Mono's Portfolio | Mohtashim Monowar - Creative Technologist</title>
+<meta name="description" content="I design and direct visual stories that help brands connect. Portfolio of video production, graphic design and short-form content by Mohtashim Monowar.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="topbar">
+  <button class="hamburger" id="sidebarToggle" aria-label="Toggle menu">
+    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <span class="brand">Mono's Portfolio</span>
+
+  <nav class="topNav" aria-label="Quick links">
+    <a href="#" class="topNavLink">About</a>
+    <a href="#" class="topNavLink">Testimonials</a>
+    <a href="#" class="topNavLink">Contact</a>
+    <span class="availBadge"><span class="availDot"></span>Open for 2 new projects</span>
+  </nav>
+
+  <button id="modeToggle" aria-label="Toggle dark mode">
+    <svg id="modeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<div id="appShell">
+  <aside id="sidebar">
+    <nav>
+      <ul>
+        <li><a class="navlink" href="#" id="blogLink">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2,2)"><line class="svgC" x1="12.791" x2="0.75" y1="10.1207" y2="10.1207"/><polyline class="svgC" points="9.8643 7.2047 12.7923 10.1207 9.8643 13.0367"/><path d="M5.2588,5.6299 C5.5888,2.0499 6.9288,0.7499 12.2588,0.7499 C19.3598,0.7499 19.3598,3.0599 19.3598,9.9999 C19.3598,16.9399 19.3598,19.2499 12.2588,19.2499 C6.9288,19.2499 5.5888,17.9499 5.2588,14.3699"/></g></svg>
+          <span class="lbl">Blog</span>
+        </a></li>
+
+        <li class="drp">
+          <div class="navlink" data-toggle="ext-portfolio">
+            <svg class="ic" viewBox="0 0 24 24"><path class="svgC" d="M13 11L21.2 2.80005"/><path class="svgC" d="M22 6.8V2H17.2"/><path d="M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13"/></svg>
+            <span class="lbl">External Portfolio</span>
+            <svg class="drp-arrow" viewBox="0 0 24 24"><g transform="translate(5,8.5)"><path d="M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0"/></g></svg>
+          </div>
+          <ul class="sub-list" id="ext-portfolio">
+            <li><a href="https://www.behance.net/monowarpy" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Behance (Design)</a></li>
+            <li><a href="https://www.youtube.com/@monounbound" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>YouTube (Video)</a></li>
+            <li><a href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Linkedin</a></li>
+            <li><a href="#"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Photography</a></li>
+          </ul>
+        </li>
+
+        <li class="drp">
+          <div class="navlink" data-toggle="featured">
+            <svg class="ic" viewBox="0 0 24 24"><g transform="translate(4.5,2.5)"><path d="M7.47024319,0 C1.08324319,0 0.00424318741,0.932 0.00424318741,8.429 C0.00424318741,16.822 -0.152756813,19 1.44324319,19 C3.03824319,19 5.64324319,15.316 7.47024319,15.316 C9.29724319,15.316 11.9022432,19 13.4972432,19 C15.0932432,19 14.9362432,16.822 14.9362432,8.429 C14.9362432,0.932 13.8572432,0 7.47024319,0 Z"/></g></svg>
+            <span class="lbl">Featured <span class="new">New!</span></span>
+            <svg class="drp-arrow" viewBox="0 0 24 24"><g transform="translate(5,8.5)"><path d="M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0"/></g></svg>
+          </div>
+          <ul class="sub-list" id="featured">
+            <li><a href="#design-projects-section"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Design - Nike</a></li>
+            <li><a href="https://youtu.be/pU3lqB1SEuo?si=piiPZHek6qvAsQ-K" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Film - Control Z</a></li>
+            <li><a href="https://youtube.com/shorts/YIa9VpvEL7s?si=FjXdyWguvQbR7mBI" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Duolingo Reel</a></li>
+          </ul>
+        </li>
+
+        <li><a class="navlink" href="#">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2.7495,2.5495)"><path d="M6.809,18.9067 C3.137,18.9067 9.41469125e-14,18.3517 9.41469125e-14,16.1277 C9.41469125e-14,13.9037 3.117,11.8997 6.809,11.8997 C10.481,11.8997 13.617,13.8847 13.617,16.1077 C13.617,18.3307 10.501,18.9067 6.809,18.9067 Z"/><path d="M6.809,8.728 C9.219,8.728 11.173,6.774 11.173,4.364 C11.173,1.954 9.219,0 6.809,0 C4.399,0 2.44496883,1.954 2.44496883,4.364 C2.436,6.766 4.377,8.72 6.778,8.728 L6.809,8.728 Z"/><path class="svgC" d="M14.0517,7.5293 C15.4547,7.1543 16.4887007,5.8753 16.4887007,4.3533 C16.4897,2.7653 15.3627,1.4393 13.8647,1.1323"/><path class="svgC" d="M14.7113,11.104 C16.6993,11.104 18.3973,12.452 18.3973,13.655 C18.3973,14.364 17.8123,15.092 16.9223,15.301"/></g></svg>
+          <span class="lbl">About</span>
+        </a></li>
+        <li><a class="navlink" href="#">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2.45208,2.85198)"><path class="svgC" d="M15.0928322,6.167017 C15.0928322,6.167017 11.8828071,10.0196486 9.53493746,10.0196486 C7.18807029,10.0196486 3.941955,6.167017 3.941955,6.167017"/><path d="M1.04805054e-13,9.11679198 C1.04805054e-13,2.27869674 2.38095238,8.8817842e-15 9.52380952,8.8817842e-15 C16.6666667,8.8817842e-15 19.047619,2.27869674 19.047619,9.11679198 C19.047619,15.9538847 16.6666667,18.233584 9.52380952,18.233584 C2.38095238,18.233584 1.04805054e-13,15.9538847 1.04805054e-13,9.11679198 Z"/></g></svg>
+          <span class="lbl">Contact</span>
+        </a></li>
+
+        <hr class="side-hr">
+
+        <li><a class="navlink" href="#">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2.55017,3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"/><path class="svgC" d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"/></g></svg>
+          <span class="lbl">Appreciations</span>
+        </a></li>
+      </ul>
+
+      <ul class="more-block">
+        <li class="drp more-item">
+          <div class="navlink" data-toggle="more-menu">
+            <span class="lbl">More...</span>
+            <svg class="drp-arrow" viewBox="0 0 24 24"><g transform="translate(5,8.5)"><path d="M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0"/></g></svg>
+          </div>
+          <ul class="sub-list" id="more-menu">
+            <li><a href="#">Hire me! <span class="new">New!</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sitemap">
+      <div class="side-more">Sitemap</div>
+      <div class="sitemap-icons">
+        <a href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.87 3.36 3.66z"/></svg>
+        </a>
+        <a href="https://www.fb.me/monowarpy" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/mono_unbound/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main id="mainCont">
+
+    <!-- HERO -->
+    <section class="hero-section">
+      <div>
+        <div class="hProf">
+          <span class="hProfImg" style="background-image:url('https://blogger.googleusercontent.com/img/a/AVvXsEgCSEJxsCbNcNCg8nHi8IuDpHZFnazYnWt204vKBvqwJt5L8NvcjQgy6DmHDSIjQAphtadLeDwx2aaCdquR0Lvt38GHvHwACvtHoP1YjsUU-3TBVtvSxAndogN7TWEYCeyBLXGGnAGJ5LjMw9E0hOJ3shN1c9cwUsdLF1ssY4_XzFbrlNQUnIwJYXTmJX0')"></span>
+          <div class="hProfTxt">
+            <strong>Mohtashim Monowar</strong>
+            <span class="hRoleWrap">
+              <span class="hRole hRoleA">Creative Technologist</span>
+              <span class="hRole hRoleB">Filmmaker</span>
+              <span class="hRole hRoleC">Student</span>
+            </span>
+          </div>
+        </div>
+
+        <h1 class="hTtl">I design and direct visual stories<br>that help brands connect.</h1>
+        <p class="hSub">Looking for something specific? Select a card to jump straight to that work →</p>
+
+        <div class="hLn">
+          <a class="hLnk" href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 32 32"><path d="M24,3H8A5,5,0,0,0,3,8V24a5,5,0,0,0,5,5H24a5,5,0,0,0,5-5V8A5,5,0,0,0,24,3Zm3,21a3,3,0,0,1-3,3H8a3,3,0,0,1-3-3V8A3,3,0,0,1,8,5H24a3,3,0,0,1,3,3Z"/><path d="M11,14a1,1,0,0,0-1,1v6a1,1,0,0,0,2,0V15A1,1,0,0,0,11,14Z"/><path d="M19,13a4,4,0,0,0-4,4v4a1,1,0,0,0,2,0V17a2,2,0,0,1,4,0v4a1,1,0,0,0,2,0V17A4,4,0,0,0,19,13Z"/><circle cx="11" cy="11" r="1"/></svg>
+            Linkedin
+          </a>
+          <a class="hLnk" href="https://drive.google.com/file/d/1jgfYF-Y9gnd7e43XOhEsvlZAQgZwW6Em/view?usp=sharing" target="_blank" rel="noopener">
+            <svg class="line" viewBox="0 0 24 24"><g transform="translate(3.6498,2.7499)"><line x1="10.6555" x2="5.2555" y1="12.6999" y2="12.6999"/><line x1="8.6106" x2="5.2546" y1="8.6886" y2="8.6886"/><path d="M16.51,5.55 L10.84,0.15 C10.11,0.05 9.29,0 8.39,0 C2.1,0 -1.95e-14,2.32 -1.95e-14,9.25 C-1.95e-14,16.19 2.1,18.5 8.39,18.5 C14.69,18.5 16.79,16.19 16.79,9.25 C16.79,7.83 16.7,6.6 16.51,5.55 Z"/><path d="M10.2844,0.0827 L10.2844,2.7437 C10.2844,4.6017 11.7904,6.1067 13.6484,6.1067 L16.5994,6.1067"/></g></svg>
+            Download Portfolio
+          </a>
+        </div>
+      </div>
+
+      <div class="heroGrid">
+        <a class="phBox" href="#video-production-section" style="background-image:url('https://blogger.googleusercontent.com/img/a/AVvXsEgpoZeM3inSUO2y3NvQh-R4Z7evZLSEqXQb3ObpQIs7Wg0hwDQlqHFxW9kgi6-U26pl2WR4Rq1YIpIgv6BZWcmpzhJ-xLbXdU27urHo3UQGqhouThY4g0anhP-oIUtWMxXr0hvZgeYrgP2QVJSUTwBg8hBelJw8akKOrq9tRnrOdjI-tbgdsKrCbChn8_M')"></a>
+        <a class="phBox" href="#design-projects-section" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHM1H_5RkhXHI3_4TkkvAtk1Ufh7J8NDQV6D7GSgcXqSD8cr6kCuQABsiKP1v5iP2rj4-g00dibYSQEWbBF_kM5pz6O8zY6Nktn5fj9EU2S7esU0cRF38NTojIWp2NhJLSYhPjWwS3XqU7Tx-t4S1YJ6laxwjLLY-Gw_NZyfJbkPAOFJH8ec78EP2vT-o/s1200/6.png')"></a>
+        <a class="phBox" href="#short-form-section" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsC9XG7DcjQ2lxPIEDSvmIEvSVYTGlaHAcIhwpG_w_lQeMkRqMYfH0Rd5Ur8MSdHEj4VvO2c6f7zwG85s2hOinAUYEqkWcUkMIW_HCjeLlZytNPX2SeCOLFdZKRp_R7s-_cdfhGI4Bw5CySgTQmtbVpFEVxvKxdCziYu0LqlgeuBYNO3qD-Xozypta5vc/s1200/7.png')"></a>
+        <a class="phBox" href="#important-links-section" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaqLNPDm9RVx8YOxHPbxb9QtXihuYkEb5TZ2Cm6SDzqQQhQYFqb6yH6vnNM7VxGNtGrc2G2VKklofbGl7peXPNs8r6EKDKi7i4N-IrQEau3M7kf-4seBa64THGD-5irqjAOKona0BBNhlptfIg8wpi_hhmWjAthYIrrEhEky6wIlbhMTBj7s1VRuC5nnU/s1200/8.png')"></a>
+      </div>
+    </section>
+
+    <!-- DESIGN PROJECTS -->
+    <section class="pg pg-alt" id="design-projects-section">
+      <div class="pgCont">
+        <div class="secIn">
+          <div class="prjHead">
+            <h2 class="title">My Design Projects</h2>
+            <p>A selection of design work - branding, UI and visual campaigns. Click any piece to view the full project.</p>
+          </div>
+
+          <div class="prjGal">
+            <a class="prjFt" href="https://www.behance.net/monowarpy" target="_blank" rel="noopener">
+              <img alt="Featured design project" src="https://blogger.googleusercontent.com/img/a/AVvXsEgS8PBTi2ivLjJPnt7tGzWxDE3TmrQZKx7ASTcu4qCyL6OLgUryw-oThb5niSdo9qnMz82Mr9RNOgWIa9pBWPkTZZ5aipN2UhEPdXvUiKQFSEIZJ9s7TEBk_RvDTMkstFQq1gdd68mb1q3HlCvT8jxWbgM_51hT_4I5JTb2xYKQ2F8ikfnzD4DqsO8PdPY">
+              <span class="prjFtLbl">Featured</span>
+              <span class="prjTtl">For Nike Sophomore Summit</span>
+            </a>
+
+            <div class="prjSide">
+              <div class="prjTrk">
+                <div class="prjPg active">
+                  <a href="https://www.behance.net/gallery/147474423/Perspective-Podcast-Minimal-Logo-Design" target="_blank" rel="noopener"><img alt="Design project 1" src="https://blogger.googleusercontent.com/img/a/AVvXsEhdqtYm7iPtze5k9u2XR1CZp-fxZoV0dRsHhBClf3lgrY49deLAz4r7SGl_RwuopAi3YVzXRv6Oa241Jj9H1i9FM9_yCDmZNUwqSxmX1wcRFh1TTv96z_EyXsPEv6v9erLMGCa4rm9HBHFzCa8JVLn1xIrkPYEh7-mChdqOJXMMK-nNNs8jNORQL_ey6t4"><span class="prjTtl">Brand & Logo Design - Sincero</span></a>
+                  <a href="https://www.behance.net/gallery/252908663/Social-Media-Design-for-Study-Abroad-Programs" target="_blank" rel="noopener"><img alt="Design project 2" src="https://blogger.googleusercontent.com/img/a/AVvXsEgOwR7cmTZ2kPpNEpIk5QJk35hB7pP1ZOZ231UD3gHL9rvZ4fFbF_g1-GWKfF8yCIrE6iz6D46FqvhbqkbNqNvGEH8Q9T6rfZayFoUlCmka4206lfnSPk6918TFkMPnyX4Uv6lkGltlPb6f3I6NuGNt8rUV6z35oeHCkfRWlIJbGLY4qAV07vUqKWc2eM4"><span class="prjTtl">Social Media Design for Study Abroad Programs</span></a>
+                  <a href="https://www.behance.net/gallery/252861887/Multi-Brand-Social-Media-Design-Collection" target="_blank" rel="noopener"><img alt="Design project 3" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWCVnF7n_khzOREExpM-JWTnufKKliEca3ns5U9JBA-kXYydJwUrmWIyAMozlQrHvEpYtpC_um6RCi5QmKGOilOLgVICzwFs5XBsBMT1jEEqylnlp6veVy_Uj_yde39x8NaNIobOHWz3nem6edsnabr6Z1heKICc_-EnC9CFFHPuLQRNjrEbe6YrXLSGs/s1200/Web%20preview.png"><span class="prjTtl">Design Collection - View project</span></a>
+                  <a href="https://www.behance.net/gallery/252985461/Branding-Social-Media-Design-for-Nonprofit-Org(s)" target="_blank" rel="noopener"><img alt="Design project 4" src="https://blogger.googleusercontent.com/img/a/AVvXsEjcV7ZUHG6ITghvgRmXT6YMiKHmg9LfOFH_osMavA9cy2QH8GBiJzW3zLQvYc9Z8BsBXtAjGaCS0Z2RSfh6RfZLuXcdltoxl5ZuUtPsFodHjLin2QQJOBa5FzRw9JuTJg70Mfwl8VqTaxfVpxJvpNszZqUtMNpNqIRMj5K0h8wF20xz3c6KvwnDHj48_1A"><span class="prjTtl">Branding & Social Media Design for Nonprofits</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prjMoreWrap">
+            <a class="btnBehance" href="https://www.behance.net/monowarpy" target="_blank" rel="noopener">
+              More on Behance
+              <svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO PRODUCTION -->
+    <section class="pg" id="video-production-section">
+      <div class="pgCont">
+        <div class="secIn">
+          <div class="vidHead">
+            <h2 class="title">Video Production</h2>
+            <p class="vidSub">A showcase of short films, edits, and video projects I've directed and produced.</p>
+          </div>
+
+          <div class="vidWrap filmSld">
+            <div class="vidSldO">
+              <div class="vidTrk">
+                <div class="vidTrkIn">
+
+                  <div class="vidCard">
+                    <div class="lazyYt1" data-embed="pU3lqB1SEuo" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEgKkXwg8sZ5z-MYCyCbbMTg8PhH7p31ee6ZHalDH0Mzu0hYaZxap380DdrUQ2dvcMTvLcTtV2kwdD7_TS8pRWwNDwcoklfKQRCOOXJSdGhKhp-yIkH5Oud75r_KzNKlcSc4WVhr_gywqI_L7yjpBZFSBe-VFkCBsg9XKl9ldVpUIsmT6l5oSSBFEzQFxygt">
+                      <span class="vidTag">Short Film</span>
+                      <span class="vidTtl">Control Z - Short Film</span>
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+
+                  <div class="vidCard">
+                    <div class="lazyYt1" data-embed="exsba1Ja3GM" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEhWqwQMYzKrKc5nZEYLyS7eh9UXUqdILGVdRW_Ua7Q6QT-ZnpTKSrFiGjka9LAUMEGTZ4c0ag3n1j52ej7Kmhwxagro1ZcGdWMvOqW1ndnKmuWmMnYIalJihKmLrUeMLjT9N7Rs-9V9ZBZGJaRn4SJWjs2f59HB-SGQqXGmmQvXugyobM9L-dUxBts1H2E">
+                      <span class="vidTag">Presentation Video</span>
+                      <span class="vidTtl">My Summer Experience & Learning | Cinematic</span>
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+
+                  <div class="vidCard">
+                    <div class="lazyYt1" data-embed="wqwhalmgn3c" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEj9H0RHwUtlYMolzGVkLzbdNW_I0DtZS1WCPPjm-fCWvgDJGnOGSXVm_otkPlIGDcY6v1GxCmjtdSD2CLm7gmJ7EYloHf42MmeEuRnTMzJwo-aU3pKGggSC58MlRMrrOhw4NNEdA4hd4WtKpGyqra5g96goemjYhU91V6W7dqqYWB4kK14PQI17Tk5j0NKX">
+                      <span class="vidTag">Practice</span>
+                      <span class="vidTtl">The Silent Visitor - Short Film (Dream Logic)</span>
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+
+                  <div class="vidCard">
+                    <div class="lazyYt1" data-embed="OjH2P7v8EXw" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEh89P45vECZVIu2g6FLqG3_FqfFnioABXk_IPbfuE2YzPdM3JUrQEzu0txvdal1vHAGhtkJsmuJ0VoMnOL-UkVPLHML3HT1AkprNGaxrl9xgqRcK6MEix8365DYDYVva0vb1kR9Q1SiGrom_9uR3ou_la1_DXaZULXzhxlYggaT7WqatQXJd_CJq7o8coU">
+                      <span class="vidTag">Short Film</span>
+                      <span class="vidTtl">A Structural Short Film - SPIN</span>
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <span class="vidArw prev" aria-label="Previous videos" onclick="filmNav(this,-1)"><svg class="line" viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg></span>
+              <span class="vidArw next" aria-label="Next videos" onclick="filmNav(this,1)"><svg class="line" viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
+            </div>
+            <div class="vidDots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHORT FORM CONTENT -->
+    <section class="pg pg-alt" id="short-form-section">
+      <div class="pgCont">
+        <div class="secIn">
+          <div class="vidHead">
+            <h2 class="title">Short Form Contents</h2>
+            <p class="vidSub">Reels, YouTube Shorts, and quick vertical edits — swipe through my latest short-form work.</p>
+          </div>
+
+          <div class="vidWrap shortSld">
+            <div class="vidSldO">
+              <div class="vidTrk">
+                <div class="vidTrkIn">
+
+                  <div class="shortCard">
+                    <div class="lazyYt1" data-embed="IaZt_ZsUC4c" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEjI8zb-nseR7ViF-nwki-YmjkAao7dOe_eEm8vLRMXDJKWsoIxqNOMnRQyqVaj8DWNcTDtV319yDcOFmjIESM3gNamWbj_HPm2dL0TykgI2Ts6hTqmRavKNJQ39etn8whu2akdRiUNckKJWAndOHN72K7L41ijMNGp-Pmx_oyMLXCAPuuYfMzw3UoC46sc">
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+                  <div class="shortCard">
+                    <div class="lazyYt1" data-embed="YIa9VpvEL7s" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEgN7gD6vfeGdqVqoi-VRqYvKj2-R-p9MpGMqNzri-qr-bLVIWV95tUhZA9PvpvekBfiHxM4VmaDfXWyzA2z3o3VvJvv7K7lASHAZHGLW1aHakJYn0ajylrpsrz3RDh6VQd3BrnM17pLtFAvpZrwZ-dDtNQXknLaPPa6fmOyu_EPCuMrwhtDwMuenilo5AE">
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+                  <div class="shortCard">
+                    <div class="lazyYt1" data-embed="4F9oM4Bre58" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEiggJl4gsxjsOXykCg7lWYzMabVA6QPjuWKI2_7FKzgYclSzDBk6AKmupY0k6Pl8qidqO2P6AeZOuBuY3gEvVYCOeJ2CWiqt0XvwTj-g8mcs1KEgsfCTIubK6sDANcVQL0_AFlj_fGmq3MPo7Mw0OY9BO2mUq2h3oxQYqqbVzAfgudpIaWTICTYvmy6wzo">
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+                  <div class="shortCard">
+                    <div class="lazyYt1" data-embed="L5cx3r4P74E" data-thumbnail-url="https://blogger.googleusercontent.com/img/a/AVvXsEhMFjUMqADInQ-ysxIpgXznsuT9eAEWUYimz29pBeE9a5vEV3w10vz9Qdtj6CTBO0pdYy1wOCG6ZXWFyJVeNoWGYI9d7jmQ2z6SlPhsy72ye-ZYUnSpz6x2SWztRyZPWApF4kCihZvpchyPdHrgSwUVWEC-ovkOevI0FbTYSUlOzbDXx_UqX-sHCQEdIbI">
+                      <span class="play"><svg viewBox="0 0 100 100"><circle class="c" cx="50" cy="50" r="46"/><polygon class="t" points="40,32 40,68 68,50"/></svg></span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <span class="vidArw prev" aria-label="Previous shorts" onclick="shortNav(this,-1)"><svg class="line" viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg></span>
+              <span class="vidArw next" aria-label="Next shorts" onclick="shortNav(this,1)"><svg class="line" viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
+            </div>
+            <div class="vidDots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPORTANT LINKS -->
+    <section class="pg" id="important-links-section">
+      <div class="pgCont" style="max-width:1200px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+        <!-- A gif will be added here later -->
+        <div class="gifSlot" aria-hidden="true"></div>
+        <div>
+          <p class="impLead">Explore my journey through art, professional growth on LinkedIn, insightful articles, and exciting projects. Let's connect and collaborate! 🚀</p>
+          <h3 class="impHead">Important Links</h3>
+          <div class="ln" style="margin-top:20px">
+            <a class="button" href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button" href="#">Hire me</a>
+          </div>
+          <a class="morepost" href="https://www.behance.net/monowarpy" target="_blank" rel="noopener">More posts →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="fotTop">
+        <div class="abtU">
+          <div class="abtL" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_DYx-ZevIly159bmETQLwsdwW7alGMxgniFrWZWcZhQdnZDTJfMLiQ05UJGl02gtfRF5leKNYo6U8vKnOANl9o0hRoIeOZABblQfKAkTv_oGZ0CVh-0MNHJJn48vLo24r7MKQDtKvId2Hc6czKOKcSytsWLyXA4MFX7lPZhFXsWgmQ04Z55X_FhiAhwI/s113/monowar%20footer%20pic.webp')"></div>
+          <div class="abtT">
+            <h2 class="tl">Monowar</h2>
+            <p class="abtD">A Tech Enthusiast who love Designing, Traveling & Making People Laugh.</p>
+          </div>
+        </div>
+
+        <div class="fotCol">
+          <h4>Professional</h4>
+          <ul>
+            <li><a href="#">My resume</a></li>
+            <li><a href="#">Contact me</a></li>
+          </ul>
+        </div>
+
+        <div class="fotCol">
+          <h4>Works</h4>
+          <ul>
+            <li><a href="https://www.behance.net/monowarpy" target="_blank" rel="noopener">Projects</a></li>
+            <li><a href="#">Creative Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="fotCol">
+          <h4>Important</h4>
+          <ul>
+            <li><a href="https://www.monowar.eu.org/2023/07/about-my-organization-aruddho-ekattor.html" target="_blank" rel="noopener">Aruddho Ekattor</a></li>
+            <li><a href="#">Achievements</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fotBottom">
+        <ul class="sL">
+          <li><a href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li>/</li>
+          <li><a href="https://www.fb.me/monowarpy" target="_blank" rel="noopener">Facebook</a></li>
+          <li>/</li>
+          <li><a href="https://www.instagram.com/mono_unbound/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+        <p class="credit">© <span id="getYear"></span> · <a href="#">Mono's Portfolio <span class="verified-icon">✓</span></a> · All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script src="sliders.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
