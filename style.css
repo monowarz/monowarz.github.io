@@ -48,7 +48,7 @@ body{
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 h1,h2,h3{font-family:var(--fontH);color:var(--headC);margin:0}
-.title{font-size:1rem;font-weight:400;text-align:center;position:relative}
+.title{font-size:1.9rem;font-weight:700;text-align:center;position:relative}
 svg .svgC{opacity:.55}
 
 /* ===== Header ===== */
@@ -65,6 +65,14 @@ svg .svgC{opacity:.55}
   display:flex;align-items:center;justify-content:center;padding:6px;
 }
 .hamburger svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+.hamburger svg.line .h1,
+.hamburger svg.line .h2,
+.hamburger svg.line .h3{transition:opacity .25s ease}
+.hamburger svg.line .h2,
+.hamburger svg.line .h3{opacity:0}
+body.sidebar-open .hamburger svg.line .h1{opacity:0}
+body.sidebar-open .hamburger svg.line .h2,
+body.sidebar-open .hamburger svg.line .h3{opacity:1}
 .brand{font-size:1.15rem;font-weight:700;color:var(--headC);white-space:nowrap}
 
 /* ===== Top nav (replaces the old search bar) ===== */
