@@ -32,6 +32,44 @@ sidebarToggle.addEventListener('click', function(){
   document.body.classList.toggle('sidebar-open');
 });
 
+// The "+" at the end of the collapsed icon rail opens the sidebar too,
+// which is what reveals the social icons living right next to it.
+var sitemapPlus = document.getElementById('sitemapPlus');
+if(sitemapPlus){
+  sitemapPlus.addEventListener('click', function(){
+    document.body.classList.add('sidebar-open');
+  });
+}
+
+// ===== Copy email to clipboard =====
+var copyEmailBtn = document.getElementById('copyEmailBtn');
+if(copyEmailBtn){
+  var emailBtnLabel = document.getElementById('emailBtnLabel');
+  var defaultEmailLabel = emailBtnLabel ? emailBtnLabel.textContent : '';
+  copyEmailBtn.addEventListener('click', function(){
+    var email = copyEmailBtn.getAttribute('data-email') || '';
+    var showCopied = function(){
+      copyEmailBtn.classList.add('copied');
+      if(emailBtnLabel){ emailBtnLabel.textContent = 'Copied to clipboard!'; }
+      setTimeout(function(){
+        copyEmailBtn.classList.remove('copied');
+        if(emailBtnLabel){ emailBtnLabel.textContent = defaultEmailLabel; }
+      }, 2000);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(email).then(showCopied);
+    } else {
+      var tmp = document.createElement('textarea');
+      tmp.value = email;
+      document.body.appendChild(tmp);
+      tmp.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(tmp);
+      showCopied();
+    }
+  });
+}
+
 // ===== Dropdown menus in sidebar =====
 document.querySelectorAll('[data-toggle]').forEach(function(el){
   el.addEventListener('click', function(){
