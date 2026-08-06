@@ -48,7 +48,7 @@ body{
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 h1,h2,h3{font-family:var(--fontH);color:var(--headC);margin:0}
-.title{font-size:1.9rem;font-weight:700;text-align:center;position:relative}
+.title{font-size:1rem;font-weight:400;text-align:center;position:relative}
 svg .svgC{opacity:.55}
 
 /* ===== Header ===== */
