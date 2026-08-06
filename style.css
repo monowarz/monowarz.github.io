@@ -87,7 +87,10 @@ body.sidebar-open .hamburger svg.line .h3{opacity:1}
   font-size:.8rem;font-weight:600;
   padding:7px 14px;border-radius:20px;
 }
-.availDot{width:6px;height:6px;border-radius:50%;background:var(--availDot);flex-shrink:0}
+.availDot{width:6px;height:6px;border-radius:50%;background:var(--availDot);flex-shrink:0;animation:availPulse 1.8s ease-in-out infinite}
+@keyframes availPulse{0%,100%{opacity:1}50%{opacity:.2}}
+.availBadge{cursor:pointer;transition:opacity .2s ease}
+.availBadge:hover{opacity:.85}
 
 #modeToggle{
   background:none;border:0;cursor:pointer;color:var(--headC);
@@ -143,14 +146,27 @@ body.sidebar-open #sidebar .more-item{height:auto;overflow:visible}
 
 .sitemap{margin-top:26px}
 .side-more{font-size:.72rem;text-transform:none;color:#9a97a6;padding:6px 10px}
-.sitemap-icons{display:flex;gap:10px;margin-top:10px;justify-content:center;flex-wrap:wrap}
-body.sidebar-open .sitemap-icons{justify-content:flex-start}
+
+.sitemapPlus{
+  display:flex;align-items:center;justify-content:center;
+  width:32px;height:32px;border-radius:50%;margin:0 auto;
+  border:1px solid var(--sideBrd);color:var(--headC);
+  background:none;cursor:pointer;padding:0;transition:var(--trans-2);
+}
+.sitemapPlus:hover{background:var(--synxBg)}
+.sitemapPlus svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
+body.sidebar-open .sitemapPlus{display:none}
+
+.sitemap-icons{display:none;gap:10px;margin-top:10px;justify-content:flex-start;flex-wrap:wrap}
+body.sidebar-open .sitemap-icons{display:flex}
 .sitemap-icons a{
   width:32px;height:32px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   border:1px solid var(--sideBrd);color:var(--headC);flex-shrink:0;
+  transition:var(--trans-2);
 }
-.sitemap-icons svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
+.sitemap-icons a:hover{background:var(--synxBg)}
+.sitemap-icons svg{width:15px;height:15px;fill:currentColor;stroke:none}
 
 #mainCont{flex:1;min-width:0;padding:0 40px}
 
@@ -181,7 +197,7 @@ body.sidebar-open .sitemap-icons{justify-content:flex-start}
 .phBox{position:relative;display:block;aspect-ratio:12/5;border-radius:28px;overflow:hidden;background-color:var(--pageB);background-size:cover;background-position:center;background-repeat:no-repeat;transition:transform .3s ease}
 .phBox:hover{transform:translateY(-4px)}
 @media screen and (max-width:520px){.heroGrid{gap:12px}.phBox{border-radius:18px}}
-#design-projects-section,#video-production-section,#short-form-section,#important-links-section{scroll-margin-top:calc(var(--headerH) + 15px)}
+#about-section,#design-projects-section,#video-production-section,#short-form-section,#hire-me-section,#important-links-section{scroll-margin-top:calc(var(--headerH) + 15px)}
 
 /* ===== Page sections ===== */
 .pg{padding:92px 0}
@@ -243,6 +259,69 @@ body.sidebar-open .sitemap-icons{justify-content:flex-start}
   #mainCont{margin-left:0}
   body.sidebar-open #sidebar{left:0}
 }
+@media screen and (max-width:480px){
+  #topbar{gap:10px;padding:0 14px}
+  .brand{display:none}
+  .availBadge{padding:7px 10px}
+}
+@media screen and (max-width:380px){
+  .availTxt{display:none}
+}
+
+/* ===== ABOUT ===== */
+
+.abtGrid{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start}
+.abtPhoto{
+  aspect-ratio:3/4;border-radius:24px;background-size:cover;background-position:center;
+  background-repeat:no-repeat;background-color:var(--synxBg);position:sticky;top:calc(var(--headerH) + 30px);
+}
+.abtEyebrow{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--linkC);margin-bottom:14px}
+.abtTtl{font-size:1.9rem;line-height:1.3;font-weight:400;margin:0 0 18px;letter-spacing:calc(var(--letterSpacing) - 0.03em)}
+.abtLead{font-size:1.05rem;line-height:1.7;color:var(--headC);margin:0 0 18px;font-weight:500}
+.abtGrid p{font-size:.95rem;line-height:1.8;margin:0 0 16px}
+.abtGrid p strong{color:var(--headC)}
+.abtStats{display:flex;gap:30px;flex-wrap:wrap;margin:30px 0 26px;padding:24px 0;border-top:1px solid var(--sideBrd);border-bottom:1px solid var(--sideBrd)}
+.abtStat{display:flex;flex-direction:column;gap:4px}
+.abtStat strong{font-size:1.6rem;font-family:var(--fontH);color:var(--headC);font-weight:700}
+.abtStat span{font-size:.8rem;color:var(--bodyC);max-width:140px;line-height:1.4}
+.abtPills{display:flex;flex-wrap:wrap;gap:10px}
+.abtPill{
+  display:inline-flex;align-items:center;font-size:.83rem;font-weight:600;
+  padding:8px 16px;border-radius:20px;border:1px solid var(--sideBrd);color:var(--bodyC);
+  transition:var(--trans-2);
+}
+.abtPill:hover{border-color:var(--linkC);color:var(--linkC)}
+@media screen and (max-width:760px){
+  .abtGrid{grid-template-columns:1fr;gap:26px}
+  .abtPhoto{aspect-ratio:16/9;max-width:280px;position:static}
+}
+
+
+/* ===== HIRE ME ===== */
+
+.hireHead{text-align:center;max-width:600px;margin:0 auto}
+.hireHead .availBadge{margin-bottom:20px}
+.hireTtl{font-size:1.9rem;font-weight:400;margin:0 0 14px}
+.hireSub{font-size:.98rem;line-height:1.7;margin:0}
+.hireGrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:900px;margin:50px auto 0}
+.hireActions{display:flex;flex-direction:column;gap:14px}
+.hireBtn{
+  display:flex;align-items:center;gap:12px;
+  background:var(--bodyB);border:1px solid var(--sideBrd);color:var(--headC);
+  padding:15px 20px;border-radius:14px;font-size:.92rem;font-weight:600;
+  cursor:pointer;transition:var(--trans-2);width:100%;text-align:left;
+  font-family:var(--fontBa);
+}
+.hireBtn:hover{border-color:var(--linkC);color:var(--linkC)}
+.hireBtn svg{width:19px;height:19px;flex-shrink:0}
+.hireBtn svg:not(.line) path,.hireBtn svg:not(.line) circle{fill:currentColor}
+.hireBtn svg.line{stroke:currentColor;fill:none;stroke-width:2}
+.hireBtn.copied{border-color:var(--availC);color:var(--availC)}
+@media screen and (max-width:760px){
+  .hireGrid{grid-template-columns:1fr;gap:26px;margin-top:34px}
+  .hireGrid .gifSlot{max-width:320px;margin:0 auto;width:100%}
+}
+
 
 /* ===== DESIGN PROJECTS (from original site) ===== */
 
