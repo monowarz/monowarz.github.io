@@ -69,7 +69,7 @@ svg .svgC{opacity:.55}
 body.sidebar-open .hamburger .bar1{transform:translateY(6px) rotate(45deg)}
 body.sidebar-open .hamburger .bar2{opacity:0}
 body.sidebar-open .hamburger .bar3{transform:translateY(-6px) rotate(-45deg)}
-.brand{font-size:1.15rem;font-weight:700;color:var(--headC);white-space:nowrap}
+.brand{font-size:1rem;font-weight:400;color:var(--headC);white-space:nowrap}
 
 /* ===== Top nav (replaces the old search bar) ===== */
 .topNav{
