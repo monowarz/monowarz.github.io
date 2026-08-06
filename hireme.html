@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Hire Me | Mohtashim Monowar - Creative Technologist</title>
+<meta name="description" content="Get in touch with Mohtashim Monowar for video production, graphic design and creative technology projects.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="topbar">
+  <button class="hamburger" id="sidebarToggle" aria-label="Toggle menu">
+    <svg class="line" viewBox="0 0 24 24">
+      <line class="bar bar1" x1="3" x2="21" y1="6" y2="6"/>
+      <line class="bar bar2" x1="3" x2="21" y1="12" y2="12"/>
+      <line class="bar bar3" x1="3" x2="21" y1="18" y2="18"/>
+    </svg>
+  </button>
+  <a class="brand" href="index.html">Mono's Portfolio</a>
+
+  <nav class="topNav" aria-label="Quick links">
+    <a href="about.html" class="topNavLink">About</a>
+    <a href="#" class="topNavLink">Testimonials</a>
+    <a href="hireme.html" class="topNavLink">Contact</a>
+  </nav>
+
+  <a href="hireme.html" class="availBadge"><span class="availDot"></span><span class="availTxt">Open for 2 new projects</span></a>
+
+  <button id="modeToggle" aria-label="Toggle dark mode">
+    <svg id="modeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<div id="appShell">
+  <aside id="sidebar">
+    <nav>
+      <ul>
+        <li><a class="navlink" href="#" id="blogLink">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2,2)"><line class="svgC" x1="12.791" x2="0.75" y1="10.1207" y2="10.1207"/><polyline class="svgC" points="9.8643 7.2047 12.7923 10.1207 9.8643 13.0367"/><path d="M5.2588,5.6299 C5.5888,2.0499 6.9288,0.7499 12.2588,0.7499 C19.3598,0.7499 19.3598,3.0599 19.3598,9.9999 C19.3598,16.9399 19.3598,19.2499 12.2588,19.2499 C6.9288,19.2499 5.5888,17.9499 5.2588,14.3699"/></g></svg>
+          <span class="lbl">Blog</span>
+        </a></li>
+
+        <li class="drp">
+          <div class="navlink" data-toggle="ext-portfolio">
+            <svg class="ic" viewBox="0 0 24 24"><path class="svgC" d="M13 11L21.2 2.80005"/><path class="svgC" d="M22 6.8V2H17.2"/><path d="M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13"/></svg>
+            <span class="lbl">External Portfolio</span>
+            <svg class="drp-arrow" viewBox="0 0 24 24"><g transform="translate(5,8.5)"><path d="M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0"/></g></svg>
+          </div>
+          <ul class="sub-list" id="ext-portfolio">
+            <li><a href="https://www.behance.net/monowarpy" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Behance (Design)</a></li>
+            <li><a href="https://www.youtube.com/@monounbound" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>YouTube (Video)</a></li>
+            <li><a href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Linkedin</a></li>
+            <li><a href="#"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Photography</a></li>
+          </ul>
+        </li>
+
+        <li class="drp">
+          <div class="navlink" data-toggle="featured">
+            <svg class="ic" viewBox="0 0 24 24"><g transform="translate(4.5,2.5)"><path d="M7.47024319,0 C1.08324319,0 0.00424318741,0.932 0.00424318741,8.429 C0.00424318741,16.822 -0.152756813,19 1.44324319,19 C3.03824319,19 5.64324319,15.316 7.47024319,15.316 C9.29724319,15.316 11.9022432,19 13.4972432,19 C15.0932432,19 14.9362432,16.822 14.9362432,8.429 C14.9362432,0.932 13.8572432,0 7.47024319,0 Z"/></g></svg>
+            <span class="lbl">Featured <span class="new">New!</span></span>
+            <svg class="drp-arrow" viewBox="0 0 24 24"><g transform="translate(5,8.5)"><path d="M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0"/></g></svg>
+          </div>
+          <ul class="sub-list" id="featured">
+            <li><a href="index.html#design-projects-section"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Design - Nike</a></li>
+            <li><a href="https://youtu.be/pU3lqB1SEuo?si=piiPZHek6qvAsQ-K" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Film - Control Z</a></li>
+            <li><a href="https://youtube.com/shorts/YIa9VpvEL7s?si=FjXdyWguvQbR7mBI" target="_blank" rel="noopener"><svg class="ic-ext" viewBox="0 0 24 24"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line class="svgC" x1="8" x2="16" y1="12" y2="12"/></svg>Duolingo Reel</a></li>
+          </ul>
+        </li>
+
+        <li><a class="navlink" href="about.html">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2.7495,2.5495)"><path d="M6.809,18.9067 C3.137,18.9067 9.41469125e-14,18.3517 9.41469125e-14,16.1277 C9.41469125e-14,13.9037 3.117,11.8997 6.809,11.8997 C10.481,11.8997 13.617,13.8847 13.617,16.1077 C13.617,18.3307 10.501,18.9067 6.809,18.9067 Z"/><path d="M6.809,8.728 C9.219,8.728 11.173,6.774 11.173,4.364 C11.173,1.954 9.219,0 6.809,0 C4.399,0 2.44496883,1.954 2.44496883,4.364 C2.436,6.766 4.377,8.72 6.778,8.728 L6.809,8.728 Z"/><path class="svgC" d="M14.0517,7.5293 C15.4547,7.1543 16.4887007,5.8753 16.4887007,4.3533 C16.4897,2.7653 15.3627,1.4393 13.8647,1.1323"/><path class="svgC" d="M14.7113,11.104 C16.6993,11.104 18.3973,12.452 18.3973,13.655 C18.3973,14.364 17.8123,15.092 16.9223,15.301"/></g></svg>
+          <span class="lbl">About</span>
+        </a></li>
+        <li><a class="navlink" href="hireme.html">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2.45208,2.85198)"><path class="svgC" d="M15.0928322,6.167017 C15.0928322,6.167017 11.8828071,10.0196486 9.53493746,10.0196486 C7.18807029,10.0196486 3.941955,6.167017 3.941955,6.167017"/><path d="M1.04805054e-13,9.11679198 C1.04805054e-13,2.27869674 2.38095238,8.8817842e-15 9.52380952,8.8817842e-15 C16.6666667,8.8817842e-15 19.047619,2.27869674 19.047619,9.11679198 C19.047619,15.9538847 16.6666667,18.233584 9.52380952,18.233584 C2.38095238,18.233584 1.04805054e-13,15.9538847 1.04805054e-13,9.11679198 Z"/></g></svg>
+          <span class="lbl">Contact</span>
+        </a></li>
+
+        <hr class="side-hr">
+
+        <li><a class="navlink" href="#">
+          <svg class="ic" viewBox="0 0 24 24"><g transform="translate(2.55017,3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"/><path class="svgC" d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"/></g></svg>
+          <span class="lbl">Appreciations</span>
+        </a></li>
+      </ul>
+
+      <ul class="more-block">
+        <li class="drp more-item">
+          <div class="navlink" data-toggle="more-menu">
+            <span class="lbl">More...</span>
+            <svg class="drp-arrow" viewBox="0 0 24 24"><g transform="translate(5,8.5)"><path d="M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0"/></g></svg>
+          </div>
+          <ul class="sub-list" id="more-menu">
+            <li><a href="hireme.html">Hire me! <span class="new">New!</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sitemap">
+      <div class="side-more">Sitemap</div>
+      <button class="sitemapPlus" id="sitemapPlus" aria-label="Show social links">
+        <svg viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+      </button>
+      <div class="sitemap-icons">
+        <a href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 32 32"><path d="M24,3H8A5,5,0,0,0,3,8V24a5,5,0,0,0,5,5H24a5,5,0,0,0,5-5V8A5,5,0,0,0,24,3Zm3,21a3,3,0,0,1-3,3H8a3,3,0,0,1-3-3V8A3,3,0,0,1,8,5H24a3,3,0,0,1,3,3Z"/><path class="svgC" d="M11,14a1,1,0,0,0-1,1v6a1,1,0,0,0,2,0V15A1,1,0,0,0,11,14Z"/><path class="svgC" d="M19,13a4,4,0,0,0-4,4v4a1,1,0,0,0,2,0V17a2,2,0,0,1,4,0v4a1,1,0,0,0,2,0V17A4,4,0,0,0,19,13Z"/><circle class="svgC" cx="11" cy="11" r="1"/></svg>
+        </a>
+        <a href="https://www.fb.me/monowarpy" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 32 32"><path d="M24,3H8A5,5,0,0,0,3,8V24a5,5,0,0,0,5,5H24a5,5,0,0,0,5-5V8A5,5,0,0,0,24,3Zm3,21a3,3,0,0,1-3,3H17V18h4a1,1,0,0,0,0-2H17V14a2,2,0,0,1,2-2h2a1,1,0,0,0,0-2H19a4,4,0,0,0-4,4v2H12a1,1,0,0,0,0,2h3v9H8a3,3,0,0,1-3-3V8A3,3,0,0,1,8,5H24a3,3,0,0,1,3,3Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/mono_unbound/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 32 32"><path d="M22,3H10a7,7,0,0,0-7,7V22a7,7,0,0,0,7,7H22a7,7,0,0,0,7-7V10A7,7,0,0,0,22,3Zm5,19a5,5,0,0,1-5,5H10a5,5,0,0,1-5-5V10a5,5,0,0,1,5-5H22a5,5,0,0,1,5,5Z"/><path class="svgC" d="M16,9.5A6.5,6.5,0,1,0,22.5,16,6.51,6.51,0,0,0,16,9.5Zm0,11A4.5,4.5,0,1,1,20.5,16,4.51,4.51,0,0,1,16,20.5Z"/><circle class="svgC" cx="23" cy="9" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main id="mainCont">
+
+<!-- HIRE ME -->
+    <section class="pg pg-alt" id="hire-me-section">
+      <div class="pgCont" style="max-width:1100px">
+        <div class="secIn">
+          <div class="hireHead">
+            <span class="availBadge" style="pointer-events:none"><span class="availDot"></span><span class="availTxt">Open for 2 new projects</span></span>
+            <h2 class="hireTtl">Got a project in mind? Let's talk.</h2>
+            <p class="hireSub">Whether it's a short film, a brand identity, or a full campaign — I'd love to hear what you're building. Reach out however's easiest for you.</p>
+          </div>
+
+          <div class="hireGrid">
+            <div class="gifSlot" aria-hidden="true"></div>
+
+            <div class="hireActions">
+              <button class="hireBtn" id="copyEmailBtn" type="button" data-email="hello@monowar.eu.org">
+                <svg class="line" viewBox="0 0 24 24"><rect height="16" rx="2" width="20" x="2" y="4"/><path d="M2 7l10 6 10-6"/></svg>
+                <span id="emailBtnLabel">hello@monowar.eu.org</span>
+              </button>
+
+              <a class="hireBtn" href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 32 32"><path d="M24,3H8A5,5,0,0,0,3,8V24a5,5,0,0,0,5,5H24a5,5,0,0,0,5-5V8A5,5,0,0,0,24,3Zm3,21a3,3,0,0,1-3,3H8a3,3,0,0,1-3-3V8A3,3,0,0,1,8,5H24a3,3,0,0,1,3,3Z"/><path class="svgC" d="M11,14a1,1,0,0,0-1,1v6a1,1,0,0,0,2,0V15A1,1,0,0,0,11,14Z"/><path class="svgC" d="M19,13a4,4,0,0,0-4,4v4a1,1,0,0,0,2,0V17a2,2,0,0,1,4,0v4a1,1,0,0,0,2,0V17A4,4,0,0,0,19,13Z"/><circle class="svgC" cx="11" cy="11" r="1"/></svg>
+                Connect on LinkedIn
+              </a>
+
+              <a class="hireBtn" href="https://drive.google.com/file/d/1dC9qfzSpL-bHiGhInJCTe5DILi3mDHtk/view?usp=sharing" target="_blank" rel="noopener">
+                <svg class="line" viewBox="0 0 24 24"><g transform="translate(3.6498,2.7499)"><line x1="10.6555" x2="5.2555" y1="12.6999" y2="12.6999"/><line x1="8.6106" x2="5.2546" y1="8.6886" y2="8.6886"/><path d="M16.51,5.55 L10.84,0.15 C10.11,0.05 9.29,0 8.39,0 C2.1,0 -1.95e-14,2.32 -1.95e-14,9.25 C-1.95e-14,16.19 2.1,18.5 8.39,18.5 C14.69,18.5 16.79,16.19 16.79,9.25 C16.79,7.83 16.7,6.6 16.51,5.55 Z"/><path d="M10.2844,0.0827 L10.2844,2.7437 C10.2844,4.6017 11.7904,6.1067 13.6484,6.1067 L16.5994,6.1067"/></g></svg>
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="fotTop">
+        <div class="abtU">
+          <div class="abtL" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_DYx-ZevIly159bmETQLwsdwW7alGMxgniFrWZWcZhQdnZDTJfMLiQ05UJGl02gtfRF5leKNYo6U8vKnOANl9o0hRoIeOZABblQfKAkTv_oGZ0CVh-0MNHJJn48vLo24r7MKQDtKvId2Hc6czKOKcSytsWLyXA4MFX7lPZhFXsWgmQ04Z55X_FhiAhwI/s113/monowar%20footer%20pic.webp')"></div>
+          <div class="abtT">
+            <h2 class="tl">Monowar</h2>
+            <p class="abtD">A Tech Enthusiast who love Designing, Traveling & Making People Laugh.</p>
+          </div>
+        </div>
+
+        <div class="fotCol">
+          <h4>Professional</h4>
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1dC9qfzSpL-bHiGhInJCTe5DILi3mDHtk/view?usp=sharing" target="_blank" rel="noopener">My resume</a></li>
+            <li><a href="hireme.html">Contact me</a></li>
+          </ul>
+        </div>
+
+        <div class="fotCol">
+          <h4>Works</h4>
+          <ul>
+            <li><a href="https://www.behance.net/monowarpy" target="_blank" rel="noopener">Projects</a></li>
+            <li><a href="#">Creative Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="fotCol">
+          <h4>Important</h4>
+          <ul>
+            <li><a href="https://www.monowar.eu.org/2023/07/about-my-organization-aruddho-ekattor.html" target="_blank" rel="noopener">Aruddho Ekattor</a></li>
+            <li><a href="#">Achievements</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fotBottom">
+        <ul class="sL">
+          <li><a href="https://www.linkedin.com/in/mohtashim-monowarp/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li>/</li>
+          <li><a href="https://www.fb.me/monowarpy" target="_blank" rel="noopener">Facebook</a></li>
+          <li>/</li>
+          <li><a href="https://www.instagram.com/mono_unbound/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+        <p class="credit">© <span id="getYear"></span> · <a href="#">Mono's Portfolio <span class="verified-icon">✓</span></a> · All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script src="sliders.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
