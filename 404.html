@@ -62,7 +62,7 @@ body{
 
 main{
   width:100%;
-  max-width:600px;
+  max-width:560px;
   text-align:center;
 }
 
@@ -87,17 +87,11 @@ main{
 }
 @keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.25} }
 
-/* ===== stage: film strip + missing-frame card, with a floating 3D magnifier over it ===== */
-.stage{
+/* ===== signature: a film strip scrolling behind a "missing frame" viewport ===== */
+.reel{
   position:relative;
-  height:280px;
-  margin-bottom:8px;
-  perspective:900px;
-}
-
-.scene{
-  position:absolute;
-  inset:0;
+  height:150px;
+  margin-bottom:26px;
 }
 
 .filmstrip{
@@ -154,13 +148,14 @@ main{
   to{ transform:translateX(-50%); }
 }
 
+/* the fixed "viewport" card sitting on top, styled like .vidCard from the portfolio */
 .viewport{
   position:relative;
   z-index:2;
-  width:150px;
-  height:170px;
+  width:130px;
+  height:150px;
   margin:0 auto;
-  border-radius:16px;
+  border-radius:14px;
   background:var(--bodyB);
   box-shadow:0 14px 30px -12px rgba(0,0,0,.3);
   border:1px solid var(--sideBrd);
@@ -168,98 +163,42 @@ main{
   align-items:center;
   justify-content:center;
   flex-direction:column;
-  gap:8px;
+  gap:6px;
 }
 .viewport .num{
   font-family:var(--fontH);
   font-weight:800;
-  font-size:2rem;
+  font-size:1.7rem;
   color:var(--headC);
   line-height:1;
 }
 .viewport .tag{
-  font-size:.66rem;
+  font-size:.62rem;
   font-weight:700;
   letter-spacing:.06em;
   text-transform:uppercase;
   color:var(--lostC);
 }
-
-/* duplicate scene, magnified, revealed only inside the lens's circular clip */
-.zoomClip{
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-  clip-path:circle(1px at -100px -100px);
-  pointer-events:none;
+.viewport .icon{
+  width:24px;
+  height:24px;
+  opacity:.6;
+  animation:search 3.6s ease-in-out infinite;
 }
-.zoomClip .scene{
-  will-change:transform;
-}
-.zoomClip .frame span{ filter:saturate(1.15); }
-
-/* ===== the magnifying glass itself ===== */
-.lensStage{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  transform-style:preserve-3d;
-}
-.lensGroup{
-  position:absolute;
-  top:0; left:0;
-  width:150px;
-  height:150px;
-  will-change:transform;
-}
-.lensHandle{
-  position:absolute;
-  width:16px;
-  height:78px;
-  left:112px;
-  top:112px;
-  border-radius:8px;
-  background:linear-gradient(115deg, #f4f2fb 0%, #c9c3e6 30%, #8e86bd 55%, #55507c 100%);
-  box-shadow:2px 4px 10px rgba(0,0,0,.28), inset -2px 0 3px rgba(255,255,255,.5);
-  transform:rotate(45deg);
-  transform-origin:top center;
-}
-.lensRing{
-  position:absolute;
-  top:0; left:0;
-  width:126px;
-  height:126px;
-  border-radius:50%;
-  background:linear-gradient(135deg, #fdfcff 0%, #d9d5f2 25%, #8c81d6 55%, #5b4fe0 100%);
-  box-shadow:
-    0 18px 34px -10px rgba(30,20,80,.45),
-    inset 0 0 0 3px rgba(255,255,255,.5),
-    inset 0 -6px 10px rgba(30,20,80,.25);
-  padding:8px;
-}
-.lensGlass{
+.viewport .icon svg{
   width:100%;
   height:100%;
-  border-radius:50%;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 32% 28%, rgba(255,255,255,.85), rgba(255,255,255,0) 45%),
-    radial-gradient(circle at 65% 70%, rgba(91,79,224,.18), rgba(91,79,224,0) 60%),
-    rgba(255,255,255,.06);
-  box-shadow:inset 0 0 22px rgba(30,20,80,.22);
-  backdrop-filter:blur(0.3px);
+  stroke:var(--bodyC);
+  fill:none;
+  stroke-width:1.8;
 }
-.lensGlare{
-  position:absolute;
-  width:38%;
-  height:70%;
-  top:8%;
-  left:18%;
-  border-radius:50%;
-  background:linear-gradient(160deg, rgba(255,255,255,.75), rgba(255,255,255,0) 70%);
-  transform:rotate(-18deg);
-  pointer-events:none;
+@keyframes search{
+  0%   { transform:translate(0,0) rotate(0deg); }
+  20%  { transform:translate(-3px,-2px) rotate(-8deg); }
+  40%  { transform:translate(2px,2px) rotate(6deg); }
+  60%  { transform:translate(3px,-2px) rotate(8deg); }
+  80%  { transform:translate(-2px,2px) rotate(-6deg); }
+  100% { transform:translate(0,0) rotate(0deg); }
 }
 
 h1{
@@ -337,16 +276,13 @@ a.ghost:focus-visible{
 }
 
 @media (prefers-reduced-motion: reduce){
-  .filmstrip-track, .lostDot, .lensGroup{ animation:none !important; }
+  .filmstrip-track, .lostDot, .viewport .icon{ animation:none !important; }
 }
 
 @media screen and (max-width:480px){
-  .stage{ height:220px; }
-  .viewport{ width:120px; height:140px; }
-  .frame{ width:60px; height:80px; }
-  .lensGroup{ width:120px; height:120px; }
-  .lensRing{ width:100px; height:100px; }
-  .lensHandle{ left:88px; top:88px; height:64px; }
+  .reel{ height:130px; }
+  .viewport{ width:110px; height:130px; }
+  .frame{ width:66px; height:88px; }
 }
 </style>
 </head>
@@ -355,38 +291,16 @@ a.ghost:focus-visible{
   <main>
     <div class="lostBadge"><span class="lostDot"></span>Frame not found</div>
 
-    <div class="stage" id="stage">
-      <div class="scene" id="scene">
-        <div class="filmstrip">
-          <div class="filmstrip-track" id="track"></div>
-        </div>
-        <div class="viewport">
-          <div class="num">404</div>
-          <div class="tag">Missing</div>
-        </div>
+    <div class="reel">
+      <div class="filmstrip">
+        <div class="filmstrip-track" id="track"></div>
       </div>
-
-      <div class="zoomClip" id="zoomClip">
-        <div class="scene" id="sceneZoom">
-          <div class="filmstrip">
-            <div class="filmstrip-track" id="trackZoom"></div>
-          </div>
-          <div class="viewport">
-            <div class="num">404</div>
-            <div class="tag">Missing</div>
-          </div>
+      <div class="viewport">
+        <div class="num">404</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="21" y2="21"/></svg>
         </div>
-      </div>
-
-      <div class="lensStage">
-        <div class="lensGroup" id="lensGroup">
-          <div class="lensHandle"></div>
-          <div class="lensRing">
-            <div class="lensGlass">
-              <div class="lensGlare"></div>
-            </div>
-          </div>
-        </div>
+        <div class="tag">Missing</div>
       </div>
     </div>
 
@@ -406,69 +320,14 @@ a.ghost:focus-visible{
   <script>
     document.getElementById('path').textContent = window.location.pathname;
 
-    // build matching film frames for both the base scene and its magnified duplicate
+    // build enough frames to fill the strip twice over, for a seamless infinite scroll
+    const track = document.getElementById('track');
     const frameCount = 24;
-    let framesHtml = '';
+    let html = '';
     for (let i = 0; i < frameCount * 2; i++) {
-      framesHtml += '<div class="frame"><span></span></div>';
+      html += '<div class="frame"><span></span></div>';
     }
-    document.getElementById('track').innerHTML = framesHtml;
-    document.getElementById('trackZoom').innerHTML = framesHtml;
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    const stage = document.getElementById('stage');
-    const lensGroup = document.getElementById('lensGroup');
-    const zoomClip = document.getElementById('zoomClip');
-    const sceneZoom = document.getElementById('sceneZoom');
-
-    const LENS_SIZE = window.innerWidth <= 480 ? 120 : 150;
-    const CLIP_RADIUS = window.innerWidth <= 480 ? 42 : 53;
-    const ZOOM_SCALE = 1.9;
-
-    function animate(t) {
-      const stageRect = stage.getBoundingClientRect();
-      const cx = stageRect.width / 2;
-      const cy = stageRect.height / 2;
-
-      const sec = t / 1000;
-
-      // gentle lissajous wander, mostly hovering over the card in the middle
-      const x = cx + Math.sin(sec * 0.55) * 90 - LENS_SIZE / 2;
-      const y = cy + Math.cos(sec * 0.4) * 46 - LENS_SIZE / 2;
-
-      const rotZ = Math.sin(sec * 0.6) * 8;
-      const rotX = Math.sin(sec * 0.45 + 1) * 10;
-      const rotY = Math.cos(sec * 0.35) * 12;
-      const bob = Math.sin(sec * 0.9) * 4;
-
-      lensGroup.style.transform =
-        `translate3d(${x}px, ${y + bob}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`;
-
-      const lensCenterX = x + LENS_SIZE / 2;
-      const lensCenterY = y + LENS_SIZE / 2 + bob;
-
-      zoomClip.style.clipPath = `circle(${CLIP_RADIUS}px at ${lensCenterX}px ${lensCenterY}px)`;
-      sceneZoom.style.transform = `scale(${ZOOM_SCALE})`;
-      sceneZoom.style.transformOrigin = `${lensCenterX}px ${lensCenterY}px`;
-
-      if (!prefersReduced) {
-        requestAnimationFrame(animate);
-      }
-    }
-
-    if (prefersReduced) {
-      // static, centered lens with no motion for reduced-motion users
-      const stageRect = stage.getBoundingClientRect();
-      const cx = stageRect.width / 2 - LENS_SIZE / 2;
-      const cy = stageRect.height / 2 - LENS_SIZE / 2;
-      lensGroup.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      zoomClip.style.clipPath = `circle(${CLIP_RADIUS}px at ${cx + LENS_SIZE / 2}px ${cy + LENS_SIZE / 2}px)`;
-      sceneZoom.style.transform = `scale(${ZOOM_SCALE})`;
-      sceneZoom.style.transformOrigin = `${cx + LENS_SIZE / 2}px ${cy + LENS_SIZE / 2}px`;
-    } else {
-      requestAnimationFrame(animate);
-    }
+    track.innerHTML = html;
   </script>
 
 </body>
