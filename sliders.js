@@ -1,4 +1,3 @@
-
 /* ===== DESIGN PROJECTS slider logic (from original site) ===== */
 
 function prjNav(btn,dir){
@@ -325,4 +324,3 @@ function shortReady(){
 }
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',shortReady)}else{shortReady()}
 })();
-
