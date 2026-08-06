@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --headC:#171a2b;
+  --bodyC:#4b4f61;
+  --bodyB:#fffdfc;
+  --pageB:#f7f3f6;
+  --linkC:#5b4fe0;
+  --linkB:#5b4fe0;
+  --sideBrd:#eee9ea;
+  --fontH:'Inter',Arial,Helvetica,sans-serif;
+  --fontBa:'Inter',Arial,Helvetica,sans-serif;
+  --synxBg:#f6f6f6;
+  --lostBg:#efecfb;
+  --lostC:#5b4fe0;
+  --lostDot:#7669f0;
+  --frameA:#5b4fe0;
+  --frameB:#c9c3f7;
+  --frameC:#eee9ea;
+  --frameD:#f6f6f6;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --headC:#f2f0f7;
+    --bodyC:#b7b6c4;
+    --bodyB:#121018;
+    --pageB:#17151f;
+    --sideBrd:#2a2733;
+    --synxBg:#1d1a26;
+    --lostBg:#211d33;
+    --lostC:#9a90f5;
+    --lostDot:#8377ef;
+    --frameA:#8377ef;
+    --frameB:#332c52;
+    --frameC:#2a2733;
+    --frameD:#1d1a26;
+  }
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:var(--fontBa);
+  background:var(--bodyB);
+  color:var(--bodyC);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+main{
+  width:100%;
+  max-width:600px;
+  text-align:center;
+}
+
+.lostBadge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  background:var(--lostBg);
+  color:var(--lostC);
+  font-size:.8rem;
+  font-weight:600;
+  padding:7px 16px;
+  border-radius:20px;
+  margin-bottom:30px;
+}
+.lostDot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--lostDot);
+  flex-shrink:0;
+  animation:pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.25} }
+
+/* ===== stage: film strip + missing-frame card, with a floating 3D magnifier over it ===== */
+.stage{
+  position:relative;
+  height:280px;
+  margin-bottom:8px;
+  perspective:900px;
+}
+
+.scene{
+  position:absolute;
+  inset:0;
+}
+
+.filmstrip{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:100vw;
+  max-width:900px;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+  mask-image:linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+}
+.filmstrip-track{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  width:max-content;
+  animation:scrollStrip 22s linear infinite;
+}
+.frame{
+  width:78px;
+  height:104px;
+  border-radius:10px;
+  flex-shrink:0;
+  position:relative;
+  background:linear-gradient(160deg, var(--frameC), var(--frameD));
+  overflow:hidden;
+}
+.frame::before, .frame::after{
+  content:'';
+  position:absolute;
+  left:8px; right:8px;
+  height:4px;
+  border-radius:2px;
+  background:var(--sideBrd);
+}
+.frame::before{ top:9px; }
+.frame::after{ bottom:9px; }
+.frame span{
+  position:absolute;
+  inset:16px 8px;
+  border-radius:6px;
+  display:block;
+  opacity:.9;
+}
+.frame:nth-child(4n+1) span{ background:linear-gradient(135deg, var(--frameA), var(--frameB)); }
+.frame:nth-child(4n+2) span{ background:linear-gradient(135deg, var(--frameB), var(--frameC)); }
+.frame:nth-child(4n+3) span{ background:linear-gradient(135deg, var(--frameC), var(--frameA)); opacity:.55; }
+.frame:nth-child(4n+4) span{ background:linear-gradient(135deg, var(--frameA), var(--frameC)); opacity:.75; }
+
+@keyframes scrollStrip{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+.viewport{
+  position:relative;
+  z-index:2;
+  width:150px;
+  height:170px;
+  margin:0 auto;
+  border-radius:16px;
+  background:var(--bodyB);
+  box-shadow:0 14px 30px -12px rgba(0,0,0,.3);
+  border:1px solid var(--sideBrd);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:8px;
+}
+.viewport .num{
+  font-family:var(--fontH);
+  font-weight:800;
+  font-size:2rem;
+  color:var(--headC);
+  line-height:1;
+}
+.viewport .tag{
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lostC);
+}
+
+/* duplicate scene, magnified, revealed only inside the lens's circular clip */
+.zoomClip{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  clip-path:circle(1px at -100px -100px);
+  pointer-events:none;
+}
+.zoomClip .scene{
+  will-change:transform;
+}
+.zoomClip .frame span{ filter:saturate(1.15); }
+
+/* ===== the magnifying glass itself ===== */
+.lensStage{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  transform-style:preserve-3d;
+}
+.lensGroup{
+  position:absolute;
+  top:0; left:0;
+  width:150px;
+  height:150px;
+  will-change:transform;
+}
+.lensHandle{
+  position:absolute;
+  width:16px;
+  height:78px;
+  left:112px;
+  top:112px;
+  border-radius:8px;
+  background:linear-gradient(115deg, #f4f2fb 0%, #c9c3e6 30%, #8e86bd 55%, #55507c 100%);
+  box-shadow:2px 4px 10px rgba(0,0,0,.28), inset -2px 0 3px rgba(255,255,255,.5);
+  transform:rotate(45deg);
+  transform-origin:top center;
+}
+.lensRing{
+  position:absolute;
+  top:0; left:0;
+  width:126px;
+  height:126px;
+  border-radius:50%;
+  background:linear-gradient(135deg, #fdfcff 0%, #d9d5f2 25%, #8c81d6 55%, #5b4fe0 100%);
+  box-shadow:
+    0 18px 34px -10px rgba(30,20,80,.45),
+    inset 0 0 0 3px rgba(255,255,255,.5),
+    inset 0 -6px 10px rgba(30,20,80,.25);
+  padding:8px;
+}
+.lensGlass{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255,255,255,.85), rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 65% 70%, rgba(91,79,224,.18), rgba(91,79,224,0) 60%),
+    rgba(255,255,255,.06);
+  box-shadow:inset 0 0 22px rgba(30,20,80,.22);
+  backdrop-filter:blur(0.3px);
+}
+.lensGlare{
+  position:absolute;
+  width:38%;
+  height:70%;
+  top:8%;
+  left:18%;
+  border-radius:50%;
+  background:linear-gradient(160deg, rgba(255,255,255,.75), rgba(255,255,255,0) 70%);
+  transform:rotate(-18deg);
+  pointer-events:none;
+}
+
+h1{
+  font-family:var(--fontH);
+  font-weight:400;
+  color:var(--headC);
+  font-size:clamp(1.7rem, 4.2vw, 2.3rem);
+  line-height:1.3;
+  margin:0 0 12px;
+  letter-spacing:-0.02em;
+}
+h1 strong{ font-weight:700; }
+
+p{
+  font-size:.95rem;
+  line-height:1.7;
+  margin:0 0 30px;
+  color:var(--bodyC);
+}
+.path-chip{
+  display:inline-block;
+  background:var(--synxBg);
+  border:1px solid var(--sideBrd);
+  border-radius:6px;
+  padding:2px 8px;
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.82rem;
+  color:var(--headC);
+  word-break:break-all;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+}
+
+a.button{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--linkB);
+  color:#fffdfc;
+  padding:12px 22px;
+  border-radius:24px;
+  font-size:.88rem;
+  font-weight:600;
+  text-decoration:none;
+  transition:opacity .2s ease, transform .2s ease;
+}
+a.button:hover{ opacity:.9; transform:translateY(-1px); }
+
+a.ghost{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--bodyB);
+  border:1px solid var(--sideBrd);
+  color:var(--headC);
+  padding:12px 22px;
+  border-radius:24px;
+  font-size:.88rem;
+  font-weight:600;
+  text-decoration:none;
+  font-family:var(--fontBa);
+  transition:border-color .2s ease, color .2s ease, transform .2s ease;
+}
+a.ghost:hover{ border-color:var(--linkC); color:var(--linkC); transform:translateY(-1px); }
+
+a.button:focus-visible,
+a.ghost:focus-visible{
+  outline:2px solid var(--linkC);
+  outline-offset:3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .filmstrip-track, .lostDot, .lensGroup{ animation:none !important; }
+}
+
+@media screen and (max-width:480px){
+  .stage{ height:220px; }
+  .viewport{ width:120px; height:140px; }
+  .frame{ width:60px; height:80px; }
+  .lensGroup{ width:120px; height:120px; }
+  .lensRing{ width:100px; height:100px; }
+  .lensHandle{ left:88px; top:88px; height:64px; }
+}
+</style>
+</head>
+<body>
+
+  <main>
+    <div class="lostBadge"><span class="lostDot"></span>Frame not found</div>
+
+    <div class="stage" id="stage">
+      <div class="scene" id="scene">
+        <div class="filmstrip">
+          <div class="filmstrip-track" id="track"></div>
+        </div>
+        <div class="viewport">
+          <div class="num">404</div>
+          <div class="tag">Missing</div>
+        </div>
+      </div>
+
+      <div class="zoomClip" id="zoomClip">
+        <div class="scene" id="sceneZoom">
+          <div class="filmstrip">
+            <div class="filmstrip-track" id="trackZoom"></div>
+          </div>
+          <div class="viewport">
+            <div class="num">404</div>
+            <div class="tag">Missing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lensStage">
+        <div class="lensGroup" id="lensGroup">
+          <div class="lensHandle"></div>
+          <div class="lensRing">
+            <div class="lensGlass">
+              <div class="lensGlare"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>This page <strong>didn't make the final cut</strong></h1>
+
+    <p>
+      There's nothing at <span class="path-chip" id="path"></span>.
+      It may have been moved, renamed, or never existed.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="button">Back to portfolio →</a>
+      <a href="javascript:history.back()" class="ghost">Go back</a>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('path').textContent = window.location.pathname;
+
+    // build matching film frames for both the base scene and its magnified duplicate
+    const frameCount = 24;
+    let framesHtml = '';
+    for (let i = 0; i < frameCount * 2; i++) {
+      framesHtml += '<div class="frame"><span></span></div>';
+    }
+    document.getElementById('track').innerHTML = framesHtml;
+    document.getElementById('trackZoom').innerHTML = framesHtml;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const stage = document.getElementById('stage');
+    const lensGroup = document.getElementById('lensGroup');
+    const zoomClip = document.getElementById('zoomClip');
+    const sceneZoom = document.getElementById('sceneZoom');
+
+    const LENS_SIZE = window.innerWidth <= 480 ? 120 : 150;
+    const CLIP_RADIUS = window.innerWidth <= 480 ? 42 : 53;
+    const ZOOM_SCALE = 1.9;
+
+    function animate(t) {
+      const stageRect = stage.getBoundingClientRect();
+      const cx = stageRect.width / 2;
+      const cy = stageRect.height / 2;
+
+      const sec = t / 1000;
+
+      // gentle lissajous wander, mostly hovering over the card in the middle
+      const x = cx + Math.sin(sec * 0.55) * 90 - LENS_SIZE / 2;
+      const y = cy + Math.cos(sec * 0.4) * 46 - LENS_SIZE / 2;
+
+      const rotZ = Math.sin(sec * 0.6) * 8;
+      const rotX = Math.sin(sec * 0.45 + 1) * 10;
+      const rotY = Math.cos(sec * 0.35) * 12;
+      const bob = Math.sin(sec * 0.9) * 4;
+
+      lensGroup.style.transform =
+        `translate3d(${x}px, ${y + bob}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`;
+
+      const lensCenterX = x + LENS_SIZE / 2;
+      const lensCenterY = y + LENS_SIZE / 2 + bob;
+
+      zoomClip.style.clipPath = `circle(${CLIP_RADIUS}px at ${lensCenterX}px ${lensCenterY}px)`;
+      sceneZoom.style.transform = `scale(${ZOOM_SCALE})`;
+      sceneZoom.style.transformOrigin = `${lensCenterX}px ${lensCenterY}px`;
+
+      if (!prefersReduced) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    if (prefersReduced) {
+      // static, centered lens with no motion for reduced-motion users
+      const stageRect = stage.getBoundingClientRect();
+      const cx = stageRect.width / 2 - LENS_SIZE / 2;
+      const cy = stageRect.height / 2 - LENS_SIZE / 2;
+      lensGroup.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+      zoomClip.style.clipPath = `circle(${CLIP_RADIUS}px at ${cx + LENS_SIZE / 2}px ${cy + LENS_SIZE / 2}px)`;
+      sceneZoom.style.transform = `scale(${ZOOM_SCALE})`;
+      sceneZoom.style.transformOrigin = `${cx + LENS_SIZE / 2}px ${cy + LENS_SIZE / 2}px`;
+    } else {
+      requestAnimationFrame(animate);
+    }
+  </script>
+
+</body>
+</html>
