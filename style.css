@@ -303,15 +303,17 @@ body.sidebar-open .sitemap-icons{display:flex}
 .abtBoxStand{grid-column:3/5}
 .abtBoxGif{grid-column:5/7;padding:0;overflow:hidden}
 
-/* Profile photo - shows the FULL image, no cropping. It scales to the
-   card's width and its height follows the image's own proportions, so
-   nothing gets cut off on any screen size. Rounded corners keep the
-   "soft, pill-like" feel without forcing a crop. */
+/* Profile photo - a landscape "pill"/cylinder: wide box, fully rounded
+   corners (border-radius:999px caps at half the box's height, which is
+   what gives the capsule/cylinder look). object-fit:contain means the
+   FULL photo is always shown, scaled to fit inside the pill — nothing
+   gets cropped, it just letterboxes if your source photo isn't already
+   this wide. */
 .abtPhotoWrap{
-  width:100%;border-radius:28px;overflow:hidden;background:var(--bodyB);
-  margin-bottom:18px;
+  aspect-ratio:2.6/1;border-radius:999px;overflow:hidden;background:var(--bodyB);
+  margin-bottom:18px;display:flex;align-items:center;justify-content:center;
 }
-.abtPhotoWrap img{width:100%;height:auto;display:block}
+.abtPhotoWrap img{width:100%;height:100%;object-fit:contain;display:block}
 .abtBadges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .abtBadge{
   display:inline-flex;align-items:center;font-size:.78rem;font-weight:600;
@@ -405,7 +407,6 @@ body.sidebar-open .sitemap-icons{display:flex}
 @media screen and (max-width:480px){
   .abtTtlLg{font-size:1.5rem}
   .abtBox{padding:18px;border-radius:18px}
-  .abtPhotoWrap{border-radius:18px}
   .toolTile{width:42px;height:42px;border-radius:12px}
   .abtIconList li{padding:10px 14px;font-size:.82rem}
 }
