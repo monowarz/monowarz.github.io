@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Exp Fair | Mohtashim Monowar</title>
+  <meta name="description" content="Explore Karel Fellowship and subscribe to Mono Unbound.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .exp-fair {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 16px;
+    }
+
+    .exp-card {
+      width: min(620px, 100%);
+      border: 1px solid var(--sideBrd);
+      border-radius: 16px;
+      background: var(--bodyB);
+      padding: 28px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.1);
+    }
+
+    .exp-card h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+      line-height: 1.2;
+    }
+
+    .exp-card p {
+      margin: 0 0 22px;
+      color: var(--bodyC);
+    }
+
+    .exp-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .exp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border: 1px solid var(--sideBrd);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-weight: 700;
+      color: var(--headC);
+      transition: border-color .2s ease, color .2s ease;
+    }
+
+    .exp-btn:hover {
+      border-color: var(--linkC);
+      color: var(--linkC);
+    }
+
+    .exp-subtext {
+      margin: -2px 2px 0;
+      font-size: .95rem;
+      color: var(--bodyC);
+    }
+  </style>
+</head>
+<body>
+  <main class="exp-fair">
+    <section class="exp-card" aria-labelledby="exp-fair-title">
+      <h1 id="exp-fair-title">Exp Fair</h1>
+      <p>Quick links from my experience fair highlights.</p>
+
+      <div class="exp-actions">
+        <a class="exp-btn" href="https://karelfellowship.org/" target="_blank" rel="noopener">More about Karel Fellowship</a>
+
+        <a class="exp-btn" href="https://www.youtube.com/@monounbound" target="_blank" rel="noopener">Subscribe to my channel</a>
+        <p class="exp-subtext">I uploaded the video I made this summer that led to multiple job offers and praises and played in company meetings!</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
